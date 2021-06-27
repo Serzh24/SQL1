@@ -29,18 +29,18 @@ CREATE TABLE IF NOT EXISTS Collection (
 
 CREATE TABLE IF NOT EXISTS MusicianGengre (
 	id SERIAL PRIMARY KEY,
-	Musician_Id integer not null references Musician(Id),
-	Genre_Id integer not null references Gengre(Id),
+	Musician_Id INTEGER not null REFERENCES Musician(Id),
+	Genre_Id INTEGER not null REFERENCES Gengre(Id),
 );
 
 CREATE TABLE IF NOT EXISTS MusicianAlbum (
 	id SERIAL PRIMARY KEY,
-	Musician_Id integer not null references Musician(Id),
-	Album_Id integer not null references Album(Id),
+	Musician_Id INTEGER NON NULL REFERENCES Musician(Id),
+	Album_Id INTEGER NOT NULL REFERENCES Album(Id),
 );
 
 CREATE TABLE IF NOT EXISTS SoundtrackCollection (
 	id SERIAL PRIMARY KEY,
-	Soundtrack_Id integer not null references Soundtrack(Id),
-	Collection_Id integer not null references Collection(Id),
+	Soundtrack_Id INTEGER NOT NULL REFERENCES Soundtrack(Id),
+	Collection_Id INTEGER NOT NULL REFERENCES Collection(Id),
 );
